@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Convert a string in abbreviated form</title>
+</head>
+
+<body>
+    <input type="text" id="fname">
+    <button id="btn" onclick="fullname()">submit</button>
+    <script>
+
+        function fullname() {
+            var str1 = document.getElementById("fname").value;
+            var split_names = str1.trim().split(" ");
+            if (split_names.length > 1) {
+                document.write(split_names[0].charAt(0) + "." + split_names[1].charAt(0) + "." + split_names[2] + "");
+            } 
+        }
+    </script>
+</body>
+
+</html>
