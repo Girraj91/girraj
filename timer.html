@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <title>Countdown timer using HTML and JavaScript</title>
+</head>
+
+<body>
+  
+   <div id="timer">
+      <span id="hh">Hour: </span>
+      <span id="mm">Minute:</span>
+      <span id="ss">Second: </span>
+  </div>
+   <script>
+      let hh = 1;
+      let mm = 0;
+      let ss = 60;
+      let id = setInterval(updateCounter, 1000)
+      function updateCounter() {
+         document.getElementById("hh").innerHTML = "Hour:" + hh;
+         document.getElementById("mm").innerHTML = "Minute:" + mm;
+         document.getElementById("ss").innerHTML = "Secound:" + ss;
+         ss--;
+         if (ss <= 0) {
+            mm--;
+            ss = 60;
+         }
+         if (mm <= 0) {
+            hh--;
+            mm = 59;
+         }
+         if (hh < 0) {
+            clearInterval(id)
+            alert("time has ended")
+         }
+         
+      }
+     
+   </script>
+</body>
+
+</html>
