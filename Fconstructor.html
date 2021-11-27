@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let Employee=(function () {
+            function Employee(id, name, gender, salary) {
+                this.id = id;
+                this.name = name;
+                this.gender = gender;
+                this.salary = salary;
+                this.calculatesalary = function (commission) {
+                    return this.salary / 12 + commission
+                }
+            }
+            return Employee;
+        })()
+        var emp=new Employee(101,"manoj","male",130000);
+        console.log(emp.id)
+        console.log(emp.name)
+        console.log(emp.gender)
+        console.log(emp.salary)
+        console.log(emp.calculatesalary(5000))
+    </script>
+</body>
+
+</html>
