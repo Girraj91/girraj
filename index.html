@@ -1,43 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <style>
-        .card{
-            width: 60%;
-            padding: 20px;
-            margin: auto;
-            background-color: antiquewhite;
-        }
-        ul li{
-            padding: 5px;
-            list-style: none;
-            background-color: orange;
-            margin-bottom: 4px;
-        }
-        ul li .close{
-            float: right;
-            color: #fff;
-            font-weight: 600;
-
-        }
-        .close:hover{ 
-        color: orangered;
-        cursor: pointer;
-        }
-    </style>
 </head>
+
 <body>
-    <div class="card">
-    <label for="">Enter Course Name :</label><br>
-    <input type="text" id="course">
-    <button id="btn">Submit</button><br>
-    <div id="result"></div>
-</div>
-    <script src="app.js"></script>
+    <script>
+        var list = ['a', ['a', 'b', 'c', ['a', 'b', 'c'],'d'], 'b', 'c'];
+        function printList(list) {
+
+            for (var i = 0; i < list.length; i++) {
+
+                if (Array.isArray(list[i])) {
+                    printList(list[i]);
+
+                }
+                else {
+
+                    document.write(list[i] + '<br>');
+
+                }
+
+            }
+        }
+
+        printList(list);
+
+    </script>
 </body>
-</html> 
+
+</html>
