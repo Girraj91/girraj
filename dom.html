@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav ul li{
+            display: inline;
+            padding: 13px;
+            background-color: orangered;
+        }
+        .active{
+            background-color: darkorange ;
+        }
+    </style>
+</head>
+<body>
+  
+  <nav>
+      <ul>
+          <li class="active">Home</li>
+          <li>Service</li>
+          <li>About</li>
+          <li>Career</li>
+          <li>Contact</li>
+
+      </ul>
+  </nav>
+  <section>
+      <ul>
+          <li>Student result</li>
+          <li>Student Exam</li>
+          <li>student test</li>
+      </ul>
+  </section>
+    
+<script>
+
+
+   var list=document.querySelectorAll("nav ul li");
+   for(var i=0; i<list.length; i++){
+       list[i].onclick=function(){
+        for(var i=0; i<list.length; i++){
+            list[i].classList.remove("active")
+        }
+           this.classList.add("active")
+       }
+   }
+
+
+  
+   var list2=document.querySelectorAll("section ul li");
+   for(var j=0; j<list2.length; j++){
+       list2[j].onclick=function(){
+        for(var k=0; k<list2.length; k++){
+            list2[k].classList.remove("active")
+        }
+           this.classList.add("active")
+       }
+   }
+
+   
+</script>
+</body>
+</html>
