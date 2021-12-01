@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pink-border{border: solid 5px black;
+            padding: 10px;}
+        .border{border:solid 5px brown;}
+        .box{
+            height: 250px;
+            width: 250px;
+           
+        }
+    </style>
+</head>
+<body>
+    <button id="btn" onclick="test()">submit</button>
+    <div class="box pink-border" id="BOX"></div>
+    <script>
+      function test(){
+           var para=document.createElement("p");
+          // var txt=document.createTextNode("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet ipsa alias nostrum nemo dignissimos at, laudantium doloribus laboriosam? Itaque est quaerat vitae facere delectus soluta, non ducimus dolore recusandae, repellendus, amet suscipit alias ut esse pariatur perferendis. Recusandae sit dolores vero id sed vitae, dolorem tempore excepturi magnam voluptatibus vel.");
+           
+          // para.appendChild(txt);
+           let box = document.getElementById("BOX");
+           // box.appendChild(para);
+            box.classList.toggle("pink-border")
+           // box.classList.add("border")
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+    <!-- <div class="box pink-border" id="BOX">
+        <select name="" id="ddl">
+            <option value="">select website</option>
+            <option value="https://www.google.com">google</option>
+            <option value="https://www.facebook.com">facebook</option>
+            <option value="https://www.whatsapp.com">whatsapp</option>
+            <option value="https://www.twitter.com">twitter</option>
+        </select>
+        <a href="#" id="link">NO LINK TILL NOW</a>
+    </div> -->
+    <select name="" id="ddl">
+        <option value="">select Website</option>
+        <option value="https://www.google.com">Google</option>
+        <option value="https://www.facebook.com">facebook</option>
+        <option value="https://www.yahoo.com">Yahoo</option>
+        <option value="https://www.whatsapp.com">Whatsapp</option>
+    </select>
+   <a href="#" id="link">No Link</a>
+    <script>
+     
+        document.getElementById("ddl").addEventListener("change",function(e){
+            var txt = this.options[this.options.selectedIndex].innerText;
+            var link = document.getElementById("link")
+            link.setAttribute("href",this.value);
+            link.innerText = txt;
+
+            
+        })
+    </script>
+</body>
+</html>

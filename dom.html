@@ -6,62 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        nav ul li{
-            display: inline;
-            padding: 13px;
-            background-color: orangered;
+        .box{
+            height: 250px;
+            width: 250px;
+            border: 2px solid blueviolet;
         }
-        .active{
-            background-color: darkorange ;
+        .circle{
+            height: 200px;
+            width: 200px;
+            background-color: chocolate;
+            border: 2px solid blueviolet;
+            border-radius: 50%;
         }
     </style>
 </head>
 <body>
-  
-  <nav>
-      <ul>
-          <li class="active">Home</li>
-          <li>Service</li>
-          <li>About</li>
-          <li>Career</li>
-          <li>Contact</li>
-
-      </ul>
-  </nav>
-  <section>
-      <ul>
-          <li>Student result</li>
-          <li>Student Exam</li>
-          <li>student test</li>
-      </ul>
-  </section>
-    
-<script>
-
-
-   var list=document.querySelectorAll("nav ul li");
-   for(var i=0; i<list.length; i++){
-       list[i].onclick=function(){
-        for(var i=0; i<list.length; i++){
-            list[i].classList.remove("active")
+    <button id="btn" onclick="test()">submit</button>
+    <div class="box" id="BOX"></div>
+    <script>
+        var btn=document.querySelector("#btn");
+        function test(){
+            var box=document.querySelector("#BOX");
+            var ele=document.createElement("div");
+            ele.classList.add("circle");
+            box.appendChild(ele)
         }
-           this.classList.add("active")
-       }
-   }
-
-
-  
-   var list2=document.querySelectorAll("section ul li");
-   for(var j=0; j<list2.length; j++){
-       list2[j].onclick=function(){
-        for(var k=0; k<list2.length; k++){
-            list2[k].classList.remove("active")
-        }
-           this.classList.add("active")
-       }
-   }
-
-   
-</script>
+       
+     
+    </script>
 </body>
 </html>
