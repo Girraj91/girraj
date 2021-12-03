@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<style>
+	#myform {
+		width: 850px;
+		height: 600px;
+		margin-left: 25%;
+		background-color: blueviolet;
+	}
+
+	.form-group {
+		display: flex;
+		justify-content: space-around;
+		margin-top: 50px;
+	}
+
+	h5 {
+		margin-top: 20px;
+	}
+
+	.form-group input {
+		width: 48%;
+		padding-left: 15px !important;
+	}
+
+	#Add {
+		padding-left: 15px;
+	}
+
+	.formdesign {
+		width: 48%;
+	}
+
+	.btn {
+		width: 200px;
+		margin-left: 40%;
+	}
+
+	
+	</style>
+
+<body>
+
+	<form action="#" onsubmit="return validation()" id="myform">
+		<h5 class="text-white text-center font-weight-bold bg-success "> Welcome to user
+			registration </h5>
+		<div class="form-group ">
+
+			<input type="text" name="user" placeholder="Enter firstname"  id="user"
+				autocomplete="off"><br>
+			<span id="username" class="text-danger font-weight-bold "> </span>
+			<input type="text" name="luser" placeholder="Enter lastname"  id="luser"
+				autocomplete="off">
+			<span id="userlname" class="text-danger"> </span>
+		</div>
+		<div class="form-group">
+
+			<input type="text" name="email" placeholder="Enter Email" id="emails"
+				autocomplete="off">
+			<span id="emailids" class="text-danger "> </span>
+			<input type="text" name="mobile" placeholder="Enter Mobile no." id="mobileNumber"
+				autocomplete="off">
+			<span id="mobileno" class="text-danger "> </span>
+		</div>
+		<div class="form-group">Gender:<br>
+
+			<div class="formdesign">
+				<input type="radio" id="mgender" value="Male">:Male
+				<input type="radio" id="fgender" value="Female">:Female
+				<span id="gender" class="text-danger"> </span>
+			</div>
+
+			<input type="text" name="address" placeholder="Enter Address" class="form-control" id="Add"
+				autocomplete="off">
+			<span id="useradd" class="text-danger "> </span>
+		</div>
+
+
+		<div class="form-group">
+
+			<input type="password" name="pass" placeholder="Enter Password" class="form-control" id="pass"
+				autocomplete="off">
+			<span id="passwords" class="text-danger "> </span>
+			<input type="password" name="conpass" placeholder="Enter confirmpassword" class="form-control" id="conpass"
+				autocomplete="off">
+			<span id="confrmpass" class="text-danger "> </span>
+		</div>
+		<input type="checkbox" name="checked" id="checked" value="check" required>I Agree with all the terms and
+		conditions!<br><span id="chk" class="text-danger "> </span>
+		<input type="submit" onclick="sub()" value="submit" id="sbtn" class="btn btn-success" autocomplete="off">
+	</form><br><br>
+
+
+
+
+
+	<script type="text/javascript">
+
+
+		function validation() {
+
+			var user = document.getElementById('user').value;
+			if (user == "") {
+				document.getElementById('username').innerHTML = " ** Please fill the username field";
+				return false;
+			}
+			if ((user.length <= 3) || (user.length > 20)) {
+				document.getElementById('username').innerHTML = " ** Username lenght must be between 2 and 20";
+				return false;
+			}
+			if (!isNaN(user)) {
+				document.getElementById('username').innerHTML = " ** only characters are allowed";
+				return false;
+			}
+
+
+
+			var luser = document.getElementById('luser').value;
+			if (luser == "") {
+				document.getElementById('userlname').innerHTML = " ** Please fill the user lastname field";
+				return false;
+			}
+			if ((luser.length <= 2) || (user.length > 20)) {
+				document.getElementById('userlname').innerHTML = " ** User last name lenght must be between 2 and 20";
+				return false;
+			}
+			if (!isNaN(luser)) {
+				document.getElementById('userlname').innerHTML = " ** only characters are allowed";
+				return false;
+			}
+
+
+
+			var emails = document.getElementById('emails').value;
+
+			if (emails == "") {
+				document.getElementById('emailids').innerHTML = " ** Please fill the email idx` field";
+				return false;
+			}
+			if (emails.indexOf('@') <= 0) {
+				document.getElementById('emailids').innerHTML = " ** @ Invalid Position";
+				return false;
+			}
+
+			if ((emails.charAt(emails.length - 4) != '.') && (emails.charAt(emails.length - 3) != '.')) {
+				document.getElementById('emailids').innerHTML = " ** . Invalid Position";
+				return false;
+			}
+
+
+
+			var mobileNumber = document.getElementById('mobileNumber').value;
+
+			if (mobileNumber == "") {
+				document.getElementById('mobileno').innerHTML = " ** Please fill the mobile NUmber field";
+				return false;
+			}
+			if (isNaN(mobileNumber)) {
+				document.getElementById('mobileno').innerHTML = " ** user must write digits only not characters";
+				return false;
+			}
+			if (mobileNumber.length != 10) {
+				document.getElementById('mobileno').innerHTML = " ** Mobile Number must be 10 digits only";
+				return false;
+			}
+
+			var mgender = document.getElementById('mgender').value;
+			var fgender = document.getElementById('fgender').value;
+
+			if (mgender.checked == false && fgender.checked == false) {
+				document.getElementById('gender').innerHTML = " **please select only one";
+				return false;
+			}
+			var address = document.getElementById('Add').value;
+
+			if (address < 10 || address > 50) {
+				document.getElementById('useradd').innerHTML = " ** Address should must be 20 to 50 character";
+				return false;
+			}
+
+			var pass = document.getElementById('pass').value;
+
+			if (pass == "") {
+				document.getElementById('passwords').innerHTML = " ** Please fill the password field";
+				return false;
+			}
+			if ((pass.length <= 5) || (pass.length > 20)) {
+				document.getElementById('passwords').innerHTML = " ** Passwords lenght must be between  5 and 20";
+				return false;
+			}
+
+			if (pass != confirmpass) {
+				document.getElementById('conpass').innerHTML = " ** Password does not match the confirm password";
+				return false;
+			}
+			var confirmpass = document.getElementById('conpass').value;
+
+			if (confirmpass == "") {
+				document.getElementById('confrmpass').innerHTML = " ** Please fill the confirmpassword field";
+				return false;
+			}
+			var check = document.getElementById('checked').value;
+			if (check.checked == false) {
+				document.getElementById('chk').innerHTML = " ** checkbox must be checked before submit";
+				return false;
+			}
+
+		}
+
+		console.log(x)
+
+
+	</script>
+
+</body>
+
+</html>
